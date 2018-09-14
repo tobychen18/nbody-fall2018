@@ -48,7 +48,7 @@ public class NBody {
 			Body[] readBodies = new Body[nb];
 			
 			for(int k=0; k < nb; k++) {
-				readBodies[nb] = new Body(s.nextDouble(), s.nextDouble(), s.nextDouble(), s.nextDouble(), s.nextDouble(), s.next());
+				readBodies[k] = new Body(s.nextDouble(), s.nextDouble(), s.nextDouble(), s.nextDouble(), s.nextDouble(), s.next());
 				// TODO: read data for each body
 				// construct new body object and add to array
 			}
