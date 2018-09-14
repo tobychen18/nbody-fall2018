@@ -62,7 +62,9 @@ public class Body {
 	 * @return distance between this and body b
 	 */
 	public double calcDistance(Body b) {
-		return Math.sqrt((Math.pow(b.getX() - myXPos, 2) - (Math.pow(b.getY() - myYPos, 2))));
+		double deltaX = b.getX() - myXPos;
+		double deltaY = b.getY() - myYPos;
+		return Math.sqrt((Math.pow(deltaX, 2)) - (Math.pow(deltaY, 2));
 	}
 
 	/**
