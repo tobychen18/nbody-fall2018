@@ -84,8 +84,9 @@ public class NBody {
 			double[] yForces = new double[bodies.length];
 			// TODO: loop over all bodies, calculate
 			// net forces and store in xforces and yforces
+			int i = 0;
 			for(Body b: bodies){
-				int i = 0;
+				
 				yForces[i] = b.calcNetForceExertedByY(bodies);
 				xForces[i] = b.calcNetForceExertedByX(bodies);
 				
@@ -94,9 +95,8 @@ public class NBody {
 			}
 			// TODO: loop over all bodies and call update
 			// with dt and corresponding xforces, yforces values
-			
+			i = 0;
 			for(Body b: bodies){
-				int i = 0;
 				b.update(dt, xForces[i], yForces[i]);
 				i++;
 			}
