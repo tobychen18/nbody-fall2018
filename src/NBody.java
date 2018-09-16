@@ -1,7 +1,7 @@
 	
 
 /**
- * @author YOUR NAME THE STUDENT IN 201
+ * @author Toby Chen
  * 
  * Simulation program for the NBody assignment
  */
@@ -23,8 +23,8 @@ public class NBody {
 	
 		// TODO: read values at beginning of file to
 		// find the radius
-		s.nextInt();
-		double radius = s.nextDouble();
+		s.nextInt(); //don't read the # of bodies
+		double radius = s.nextDouble(); //find the radius
 		
 		s.close();
 		
@@ -46,12 +46,12 @@ public class NBody {
 			// TODO: read # bodies, create array, ignore radius
 			int nb = s.nextInt(); // # bodies to be read
 			Body[] readBodies = new Body[nb];
-			s.nextDouble();
+			s.nextDouble(); //skip the next double bc that's the radius
 			for(int k=0; k < nb; k++) {
-				
+				//reads the data in that line where each number corresponds with the proper values in the constructor
 				readBodies[k] = new Body(s.nextDouble(), s.nextDouble(), s.nextDouble(), s.nextDouble(), s.nextDouble(), s.next());
-				// TODO: read data for each body
-				// construct new body object and add to array
+				// TODO: read data for each body ^^
+				// construct new body object and add to array 
 			}
 			
 			s.close();
@@ -70,7 +70,7 @@ public class NBody {
 			fname = args[2];
 		}	
 		
-		Body[] bodies = readBodies(fname);
+		Body[] bodies = readBodies(fname); 
 		double radius = readRadius(fname);
 		
 		StdDraw.setScale(-radius, radius);
@@ -80,10 +80,12 @@ public class NBody {
 			
 			// TODO: create double arrays xforces and yforces
 			// to hold forces on each body
+			//xForces and yForces hold the net x and y forces reflectively
 			double[] xForces = new double[bodies.length];
 			double[] yForces = new double[bodies.length];
 			// TODO: loop over all bodies, calculate
 			// net forces and store in xforces and yforces
+			//loops over all the bodies to add the forces using i as a counter
 			int i = 0;
 			for(Body b: bodies){
 				
@@ -95,6 +97,7 @@ public class NBody {
 			}
 			// TODO: loop over all bodies and call update
 			// with dt and corresponding xforces, yforces values
+			//loops over all the bodies to updated the body using i as a counter
 			i = 0;
 			for(Body b: bodies){
 				b.update(dt, xForces[i], yForces[i]);

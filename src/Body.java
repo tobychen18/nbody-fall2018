@@ -37,6 +37,9 @@ public class Body {
 		myFileName = b.getName();
 	}
 
+	/**
+	 * all the getters for the body class
+	 */
 	public double getXVel(){
 		return myXVel;
 	}
@@ -62,10 +65,10 @@ public class Body {
 	 * @return distance between this and body b
 	 */
 	public double calcDistance(Body b) {
-		double deltaX = b.getX() - myXPos;
-		double deltaY = b.getY() - myYPos;
-		double rSquared = Math.pow(deltaX, 2) + Math.pow(deltaY, 2);
-		return Math.sqrt(rSquared);
+		double deltaX = b.getX() - myXPos; //store the change in x
+		double deltaY = b.getY() - myYPos; //store change in y
+		double rSquared = Math.pow(deltaX, 2) + Math.pow(deltaY, 2); //calculate r^2
+		return Math.sqrt(rSquared); //find r
 	}
 
 	/**
@@ -74,7 +77,7 @@ public class Body {
 	 * @return the force exerted
 	 */
 	public double calcForceExertedBy(Body p){
-		double g = 6.67*1e-11;
+		double g = 6.67*1e-11; 
 		return ((g * p.getMass() * myMass) / Math.pow(calcDistance(p), 2));
 	}
 	/**
@@ -151,6 +154,10 @@ public class Body {
 		myYVel = nvy;
 		
 	}
+	
+	/**
+	 * draws the bodies, based on the positions and the image and file name
+	 */
 	
 	public void draw(){
 	StdDraw.picture(myXPos, myYPos, "images/"+ myFileName);
