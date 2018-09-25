@@ -8,7 +8,7 @@ public class Body {
 	private String myFileName;
 
 	/**
-	 * 
+	 * initialize the body using given values and string
 	 * @param x initial x position
 	 * @param y initial y position
 	 * @param xv initial x velocity
